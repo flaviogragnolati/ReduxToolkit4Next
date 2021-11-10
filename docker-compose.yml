@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  aggroweb:
+    ports:
+      - $PORT:$PORT
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    # only if we use containers for local dev
+    # command: dev
+    # volumes:
+    # - .:/usr/src/app
+    # - /usr/src/app/node_modules
+    # - /usr/src/app/.next
+    env_file:
+      - .env

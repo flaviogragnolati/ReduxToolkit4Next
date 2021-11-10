@@ -1,0 +1,15 @@
+# git files
+.git/
+.gitignore
+
+# Existing Next.js builds
+.next/
+out/
+
+# Docker files
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Installed inside container
+node_modules/

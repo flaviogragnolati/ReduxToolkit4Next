@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": "src",
+    "paths": {
+      "@/app/*": [
+        "src/app/*"
+      ],
+      "@/common/*": [
+        "src/common/*"
+      ],
+      "@/components/*": [
+        "src/common/components/*"
+      ],
+      "@/utils/*": [
+        "src/common/utils/*"
+      ],
+      "@/layouts/*": [
+        "src/layouts/*"
+      ],
+      "@/modules/*": [
+        "src/modules/*"
+      ],
+      "@/pages/*": [
+        "src/pages/*"
+      ],
+      "@/public/*": [
+        "public/*"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "build",
+    "**/build/*",
+    "out",
+    "**/out/*"
+  ]
+}
