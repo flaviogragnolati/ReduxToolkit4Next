@@ -65,10 +65,14 @@ export default function Home() {
       alignContent="center"
     >
       <Grid item xs={4}>
-        <Stack spacing={5} direction="row">
+        <Stack spacing={5} direction="row" justifyContent="center">
           <Typography variant="h1">{count}</Typography>
           {status === STATUS.pending && (
-            <Box sx={{ display: 'flex' }}>
+            <Box
+              sx={{
+                display: 'flex',
+              }}
+            >
               <CircularProgress />
             </Box>
           )}

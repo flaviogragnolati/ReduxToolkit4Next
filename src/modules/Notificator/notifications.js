@@ -74,10 +74,10 @@ const defaultSnackbar = {
   options: {
     key: new Date().getTime() + Math.random(),
     variant: 'default', // info|error|success|warning|default
-    anchorOrigin: {
-      vertical: 'top', // top|bottom
-      horizontal: 'center', // left|center|right
-    },
+    // anchorOrigin: {
+    //   vertical: 'top', // top|bottom
+    //   horizontal: 'center', // left|center|right
+    // },
     // action: (key) => (
     //   <Button onClick={() => dispatch(closeSnackbar(key))}>X</Button>
     // ),
