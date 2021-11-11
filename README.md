@@ -618,3 +618,11 @@ export default (Page);
 ## Persistir el estado
 
 Accion de persistir el estado en memoria (local storage) del lado cliente y/o server. Puede realizarse de forma manual, lo que implica mantener sincronizado el estado entre lo persisito y las actualizaciones que se realizan. La libreria [redux-persist](https://github.com/rt2zz/redux-persist) simplifica el proceso de manera significativa.
+
+## **Documentacion**
+
+- [Ejemplo oficial nextjs](https://github.com/vercel/next.js/tree/canary/examples/with-redux)
+- [Documentacion oficial next-redux-wrapper](https://github.com/kirill-konshin/next-redux-wrapper)
+- [Documentacion ofical Redux](https://redux.js.org/)
+- [Documentacion ofical Redux Toolkit](https://redux-toolkit.js.org/)
+- [Resumen Redux + ReduxToolkit](https://www.valentinog.com/blog/redux/)

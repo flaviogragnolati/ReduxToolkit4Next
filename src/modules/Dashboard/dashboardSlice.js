@@ -13,6 +13,7 @@ const dataInitialState = {
   status: STATUS.idle,
   error: null,
   data: null,
+  dataById: null,
   display: false,
 };
 
@@ -30,8 +31,20 @@ const data = [
     extra: '...',
   },
 ];
+
 const mockData = async () => {
   return P.delay(2000, P.resolve(data));
+};
+
+const mockById = async () => {
+  return P.delay(
+    1500,
+    P.resolve({
+      id: 1,
+      item: 'De mentira',
+      content: 'contenido mock',
+    })
+  );
 };
 
 export const getData = createAsyncThunk(
@@ -50,9 +63,20 @@ export const getData = createAsyncThunk(
   }
 );
 
-const isPendingAction = isPending(getData);
-const isFulfilledAction = isFulfilled(getData);
-const isRejectedAction = isRejected(getData);
+export const getById = createAsyncThunk(
+  'dashboard/getById',
+  async (payload, { rejectWithValue }) => {
+    const data = await mockById(payload);
+    if (!data) {
+      rejectWithValue({ message: 'No se recibieron datos' });
+    }
+    return data;
+  }
+);
+
+const isPendingAction = isPending(getData, getById);
+const isFulfilledAction = isFulfilled(getData, getById);
+const isRejectedAction = isRejected(getData, getById);
 
 const dataSlice = createSlice({
   name: 'dashboard',
@@ -68,6 +92,9 @@ const dataSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getData.fulfilled, (state, { payload }) => {
       state.data = payload;
+    });
+    builder.addCase(getById.fulfilled, (state, { payload }) => {
+      state.dataById = payload;
     });
     builder.addMatcher(isPendingAction, (state, { payload }) => {
       state.status = STATUS.pending;

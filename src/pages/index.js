@@ -48,7 +48,7 @@ export default function Home() {
     dispatch(
       setModal({
         type: MODAL_TYPES.genericModal,
-        modalProps: { header: 'titulo por props' },
+        modalProps: { header: 'title by props' },
       })
     );
   };

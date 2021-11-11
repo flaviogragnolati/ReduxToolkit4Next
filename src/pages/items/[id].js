@@ -1,18 +1,22 @@
 import React from 'react';
 import { useSelector, useStore } from 'react-redux';
-import { wrapper } from '@/redux/store';
+import { wrapper } from '@/src/redux/store';
+import { getById } from '@/modules/Dashboard/dashboardSlice';
+import { dataByIdSelector } from '@/modules/Dashboard/dashboardSelectors';
 
 const Page = (props) => {
   console.log('State on render', useStore().getState(), { props });
-  const content = useSelector(selectSomething(props.id));
+  const dataById = useSelector(dataByIdSelector);
 
-  if (!content) {
+  if (!dataById) {
     return <div>RENDERED WITHOUT CONTENT FROM STORE!!!???</div>;
   }
 
   return (
     <div>
-      <h3>{content}</h3>
+      <h3>{dataById.id}</h3>
+      <h3>{dataById.item}</h3>
+      <h3>{dataById.content}</h3>
     </div>
   );
 };
@@ -22,7 +26,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
     async ({ params }) => {
       const { id } = params;
 
-      await store.dispatch(fetchSubject(id)); // o puede usarse hooks de `useDispatch`
+      await store.dispatch(getById(id)); // o puede usarse hooks de `useDispatch`
 
       return {
         props: {
