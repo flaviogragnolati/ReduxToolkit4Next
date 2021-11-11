@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import CssBaseline from '@mui/material/CssBaseline';
+import wrapper from '@/src/redux/store';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  console.log('_APP', { pageProps });
+  return (
+    <>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);

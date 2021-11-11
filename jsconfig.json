@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
+    "moduleResolution": "node",
     "jsx": "preserve",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
       "@/app/*": [
         "src/app/*"
@@ -26,6 +27,9 @@
       ],
       "@/public/*": [
         "public/*"
+      ],
+      "@/src/*": [
+        "src/*"
       ]
     }
   },
@@ -38,6 +42,11 @@
     "build",
     "**/build/*",
     "out",
-    "**/out/*"
+    "**/out/*",
+    "dist",
+    ".vscode",
+    "coverage",
+    ".npm",
+    ".yarn"
   ]
 }
