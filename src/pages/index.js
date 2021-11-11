@@ -20,7 +20,12 @@ import {
 } from '@/modules/Dashboard/dashboardSelectors';
 import { setModal } from '@/modules/Modal/modalSlice';
 import { MODAL_TYPES } from '@/config/modalTypes';
-import { getData, toggleDisplayData } from '@/modules/Dashboard/dashboardSlice';
+import {
+  getData,
+  toggleDisplayData,
+  deleteData,
+} from '@/modules/Dashboard/dashboardSlice';
+import useConfirmationModal from '@/hooks/useConfirmationModal';
 import { STATUS } from '@/constants/thunkStates';
 
 export default function Home() {
@@ -29,7 +34,7 @@ export default function Home() {
   const status = useSelector(dataStatus);
   const displayData = useSelector(displayDataSelector);
   const data = useSelector(dataSelector);
-  console.log('DFASTA', data);
+  const { getConfirmation } = useConfirmationModal();
 
   const handleIncrement = () => {
     dispatch(increment());
@@ -54,6 +59,16 @@ export default function Home() {
 
   const handleChange = () => {
     dispatch(toggleDisplayData());
+  };
+
+  const handleDelete = async () => {
+    // const modalProps = {
+    //   message: 'Esta seguro que desea borrar la data?',
+    //   btnCancel: 'Cancelar',
+    //   btnConfirm: 'Exportar',
+    // };
+    // (await getConfirmation(modalProps)) && dispatch(deleteData());
+    dispatch(deleteData());
   };
 
   return (
@@ -94,7 +109,15 @@ export default function Home() {
             Open Confirmation modal
           </Button>
           <Button variant="contained" onClick={handleFetch}>
-            Fetch Props
+            Fetch Data
+          </Button>
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={handleDelete}
+            disabled={!data || data.length === 0}
+          >
+            Delete Data
           </Button>
           <FormGroup>
             <FormControlLabel

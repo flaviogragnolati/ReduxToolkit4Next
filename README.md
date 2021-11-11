@@ -210,6 +210,7 @@ Cada uno de estos estados se concatena a la accion retornada por el thunk. Cada 
 1. Importar hooks (useSelector, useDispatch), y acciones (actions)
 2. Instanciar selector y dispatch
 3. Despachar acciones
+4. Renderizar el estado
 
 ## Para el 1% restante
 

@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { STATUS } from '@/constants/thunkStates';
 import { MODAL_TYPES } from '@/config/modalTypes';
+import { useStore } from 'react-redux';
 
 const modalShape = {
   status: STATUS.idle,

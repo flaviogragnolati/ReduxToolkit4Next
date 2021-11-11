@@ -61,6 +61,9 @@ const dataSlice = createSlice({
     toggleDisplayData: (state, action) => {
       state.display = !state.display;
     },
+    deleteData: (state, action) => {
+      state.data = null;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getData.fulfilled, (state, { payload }) => {
@@ -80,5 +83,5 @@ const dataSlice = createSlice({
   },
 });
 
-export const { toggleDisplayData } = dataSlice.actions;
+export const { toggleDisplayData, deleteData } = dataSlice.actions;
 export default dataSlice;

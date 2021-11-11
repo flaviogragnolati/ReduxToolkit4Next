@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Box, Button, Paper, Typography } from '@mui/core';
+import { Box, Button, Paper, Typography } from '@mui/material';
 import useConfirmationModal from '@/hooks/useConfirmationModal';
 
 // const StyledPaper = styled(Paper)`

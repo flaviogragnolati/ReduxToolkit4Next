@@ -39,6 +39,6 @@ const makeStore = () => {
 export const wrapper = createWrapper(makeStore, {
   debug: !IS_PRODUCTION,
 });
-extraThunkArguments.store = store;
+extraThunkArguments.store = store; // TODO: store not being passed to thunk
 
 export default wrapper;
