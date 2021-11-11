@@ -20,7 +20,10 @@
         "src/common/hooks/*"
       ],
       "@/config/*": [
-        "src/config/*"
+        "src/common/config/*"
+      ],
+      "@/constants/*": [
+        "src/common/constants/*"
       ],
       "@/layouts/*": [
         "src/layouts/*"

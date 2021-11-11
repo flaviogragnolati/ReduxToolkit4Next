@@ -1,8 +1,8 @@
 import P from 'bluebird';
 import _ from 'lodash';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { STATUS } from 'constants/thunkStates';
-import { MODAL_TYPES } from '@/common/config/modalTypes';
+import { STATUS } from '@/constants/thunkStates';
+import { MODAL_TYPES } from '@/config/modalTypes';
 
 const modalShape = {
   status: STATUS.idle,
@@ -92,4 +92,4 @@ export const {
   declineConfirmationModal,
 } = modalSlice.actions;
 
-export default modalSlice.reducer;
+export default modalSlice;

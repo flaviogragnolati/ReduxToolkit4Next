@@ -1,7 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-import counter from '@/modules/Counter/counterSlice';
-import modal from '@/modules/Modal/modalSlice';
+import counterSlice from '@/modules/Counter/counterSlice';
+import modalSlice from '@/modules/Modal/modalSlice';
+import notificationSlice from '@/modules/Notificator/notificationSlice';
 
 const rootReducer = (state, action) => {
   switch (action.type) {
@@ -11,8 +12,9 @@ const rootReducer = (state, action) => {
 
     default: {
       const combineReducer = combineReducers({
-        counter,
-        modal,
+        [counterSlice.name]: counterSlice.reducer,
+        [modalSlice.name]: modalSlice.reducer,
+        [notificationSlice.name]: notificationSlice.reducer,
       });
       return combineReducer(state, action);
     }

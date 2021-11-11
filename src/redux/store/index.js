@@ -26,17 +26,19 @@ const middleware = (getDefaultMiddleware) => {
   return customMiddleware;
 };
 
-const setupStore = (context) =>
-  configureStore({
+let store;
+
+const makeStore = () => {
+  store = configureStore({
     reducer: rootReducer,
     middleware,
   });
-
-const makeStore = (context) => setupStore(context);
+  return store;
+};
 
 export const wrapper = createWrapper(makeStore, {
   debug: !IS_PRODUCTION,
 });
-extraThunkArguments.store = wrapper;
+extraThunkArguments.store = store;
 
 export default wrapper;

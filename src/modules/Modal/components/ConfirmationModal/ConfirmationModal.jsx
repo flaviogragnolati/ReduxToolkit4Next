@@ -3,22 +3,22 @@ import styled from '@emotion/styled';
 import { Box, Button, Paper, Typography } from '@mui/core';
 import useConfirmationModal from '@/hooks/useConfirmationModal';
 
-const StyledPaper = styled(Paper)`
-  padding: 2rem;
-  margin: auto;
-  width: 40vw;
-  max-height: 90vh;
-  overflow: auto;
-  text-align: center;
-  border: 2px solid #000;
-  box-shadow: ${(p) => p.theme.shadows[5]};
-`;
+// const StyledPaper = styled(Paper)`
+//   padding: 2rem;
+//   margin: auto;
+//   width: 40vw;
+//   max-height: 90vh;
+//   overflow: auto;
+//   text-align: center;
+//   border: 2px solid #000;
+//   /* box-shadow: ${(p) => p.theme.shadows[5]}; */
+// `;
 
 function ConfirmationModal() {
   const { confirm, decline, modalProps } = useConfirmationModal();
 
   return (
-    <StyledPaper elevation={3}>
+    <Paper elevation={3}>
       <Typography variant="text" gutterBottom>
         {modalProps.message || 'Esta seguro de que desea realizar esta acción?'}
       </Typography>
@@ -51,7 +51,7 @@ function ConfirmationModal() {
           </Button>
         </Box>
       </Box>
-    </StyledPaper>
+    </Paper>
   );
 }
 

@@ -2,6 +2,8 @@ import { Grid, Stack, Button, Typography } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { increment, decrement } from '@/modules/Counter/counterSlice';
 import { countSelector } from '@/modules/Counter/counterSelectors';
+import { setModal } from '@/modules/Modal/modalSlice';
+import { MODAL_TYPES } from '@/config/modalTypes';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -14,6 +16,17 @@ export default function Home() {
   const handleDecrement = () => {
     dispatch(decrement());
   };
+
+  const handleOpenModal = () => {
+    dispatch(
+      setModal({
+        type: MODAL_TYPES.genericModal,
+        modalProps: { header: 'titulo por props' },
+      })
+    );
+  };
+
+  const handleFetch = () => {};
 
   return (
     <Grid
@@ -34,8 +47,12 @@ export default function Home() {
           <Button variant="contained" onClick={handleDecrement}>
             Decrease
           </Button>
-          <Button variant="contained">Open Pop Up</Button>
-          <Button variant="contained">Fetch Props</Button>
+          <Button variant="contained" onClick={handleOpenModal}>
+            Open Confirmation modal
+          </Button>
+          <Button variant="contained" onClick={handleOpenModal}>
+            Fetch Props
+          </Button>
         </Stack>
       </Grid>
     </Grid>

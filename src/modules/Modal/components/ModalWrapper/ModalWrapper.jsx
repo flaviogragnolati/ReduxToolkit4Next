@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Modal } from '@mui/core';
+import Modal from '@mui/material/Modal';
 
 const CenterDiv = styled.div`
   position: absolute;
@@ -11,12 +11,7 @@ const CenterDiv = styled.div`
 
 function ModalWrapper({ handleClose, children, ...rest }) {
   return (
-    <Modal
-      open={true}
-      onClose={handleClose}
-      aria-labelledby="generic modal"
-      aria-describedby="generic modal description"
-    >
+    <Modal open={true} onClose={handleClose}>
       <CenterDiv>{children}</CenterDiv>
     </Modal>
   );

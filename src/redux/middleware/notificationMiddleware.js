@@ -1,9 +1,8 @@
-import { enqueueSnackbar } from 'redux/slices/notificationSlice';
-// import getSnackbar from 'pages/Notifier/notifications';
+import { enqueueSnackbar } from '@/modules/Notificator/notificationSlice';
+import getSnackbar from '@/modules/Notificator/notifications';
 
 const notificationMiddleware = (store) => (next) => (action) => {
-  // const snackbar = getSnackbar(action);
-  const snackbar = false;
+  const snackbar = getSnackbar(action);
   if (snackbar) {
     store.dispatch(enqueueSnackbar(snackbar));
   }
