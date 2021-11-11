@@ -10,7 +10,6 @@ let displayed = [];
 function Notifier() {
   const dispatch = useDispatch();
   const notifications = useSelector(notificationSelector);
-  console.log('notifications', notifications);
 
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 

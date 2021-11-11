@@ -91,7 +91,6 @@ const defaultRejectedSnackbar = {
 
 export default function getSnackbar(action) {
   let content = snackbars[action.type];
-  console.log('GET SNACKBAR', action);
 
   // adds default error notifitacion to all async actions
   if (!content && action.type.split('/').pop() === REJECTED) {

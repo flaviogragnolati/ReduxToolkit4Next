@@ -2,11 +2,11 @@ const syncNotifications = {
   counter: {
     increment: {
       message: 'Sumando (+1)',
-      variant: 'info',
+      variant: 'success',
     },
     decrement: {
       message: 'Restando (-1)',
-      variant: 'info',
+      variant: 'warning',
     },
   },
 };

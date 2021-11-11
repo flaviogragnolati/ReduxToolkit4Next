@@ -1,6 +1,14 @@
 import { PENDING, REJECTED, FULFILLED } from '@/constants/thunkStates';
 
 const thunkNotifications = {
+  dashboard: {
+    getData: {
+      [PENDING]: {
+        message: 'Cargando datos...',
+        variant: 'info',
+      },
+    },
+  },
   data: {
     getData: {
       [PENDING]: {

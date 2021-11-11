@@ -12,7 +12,6 @@ export const STATUS = Object.freeze({
   pending: 'pending', //state when async actions is dispatched
   loading: 'loading', //state when async action is taking more time usual
   fulifilled: 'fulifilled', //state when async action is resolved correctly
-  rejected: 'rejected', //state when async action is rejected
   error: 'error', //state when async action is rejected
   warning: 'warning', //state when asychronous action is partialy rejected or the response is rejected
 });
