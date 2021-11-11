@@ -37,5 +37,6 @@ const makeStore = (context) => setupStore(context);
 export const wrapper = createWrapper(makeStore, {
   debug: !IS_PRODUCTION,
 });
+extraThunkArguments.store = wrapper;
 
 export default wrapper;

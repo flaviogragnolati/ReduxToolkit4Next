@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 import counter from '@/modules/Counter/counterSlice';
+import modal from '@/modules/Modal/modalSlice';
 
 const rootReducer = (state, action) => {
   switch (action.type) {
@@ -9,9 +10,9 @@ const rootReducer = (state, action) => {
       return action.payload;
 
     default: {
-      console.log('DEFAULT REDUCERS');
       const combineReducer = combineReducers({
         counter,
+        modal,
       });
       return combineReducer(state, action);
     }

@@ -16,6 +16,12 @@
       "@/utils/*": [
         "src/common/utils/*"
       ],
+      "@/hooks/*": [
+        "src/common/hooks/*"
+      ],
+      "@/config/*": [
+        "src/config/*"
+      ],
       "@/layouts/*": [
         "src/layouts/*"
       ],
