@@ -12,20 +12,7 @@ export const mirrorKeys = (keys) => {
   );
 };
 
-export const toAbsoluteUrl = (pathname) =>
-  process.env.REACT_APP_PUBLIC_URL + pathname;
-
-export const getFilters = (payload) => {
-  const { operationStatus, contractDate, name, document } = payload;
-  const filters = {
-    operationStatus,
-    contractDate,
-    name,
-    document,
-    tributaryKey: document, // we dont know if the input is document or tributaryKey
-  };
-  return filters;
-};
+export const toAbsoluteUrl = (pathname) => process.env.PUBLIC_URL + pathname;
 
 export const isEmptyOrNil = (item) => {
   if (_.isObject(item)) {
